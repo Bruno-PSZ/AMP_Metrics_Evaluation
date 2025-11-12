@@ -44,6 +44,7 @@ This folder contains Jupyter notebooks used to benchmark AMP similarity metrics 
 - The notebooks depend on the [`Seqme`](https://github.com/szczurek-lab/seqme/tree/main) package.
 - They should be placed inside the `notebooks/` directory of the `seqme` repository for proper execution.
 - They use metric implementations and utility functions from that package.
+- Update paths in `config_paths.py`
 
 ---
 
@@ -57,3 +58,4 @@ This folder contains Jupyter notebooks used to benchmark AMP similarity metrics 
   👉 [Google Drive Data Folder](https://drive.google.com/drive/u/0/folders/1MIwxyMPFIw35xpiOOygoFjZr2DMtQFJZ)
 
 ---
+
