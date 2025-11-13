@@ -7,7 +7,6 @@ from Bio.SeqIO import FastaIO
 from Bio import SeqIO
 
 from extract_counts import run_blosum_from_seqs
-from extract_cluster_import import extract_cluster_sequences_to_dict
 from run_mafft import run_mafft
 from extract_blocks_import import extract_blocks_from_fasta_string
 from fasta_to_plain_import import fasta_str_to_plain_str 
