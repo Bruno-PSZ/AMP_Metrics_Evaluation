@@ -45,10 +45,14 @@ This folder contains Jupyter notebooks used to benchmark AMP similarity metrics 
 - They should be placed inside the `notebooks/` directory of the `seqme` repository for proper execution.
 - They use metric implementations and utility functions from that package.
 - Update paths in `config_paths.py`
+- It uses CD-HIT clustering tool
 
 ---
 
 ## ⚙️ Setup Notes
+
+- **Environment**
+  Environment should be set up according to Seqme Package
 
 - **Paths:**  
   Data paths in the scripts and notebooks may need adjustment to match your local file system. Data should be placed in the `data` directory in suitable subfolder.
