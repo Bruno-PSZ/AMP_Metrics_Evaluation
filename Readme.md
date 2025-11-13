@@ -15,7 +15,7 @@ It produces two types of matrices:
 - Based on **all known AMPs**
 
 **Details:**
-- The module relies on the `pysum` package, using a modified version of `algorithm.py` (included in this repository).
+- The module relies on the `pysum` package, using a modified version of `algorithm.py` (included in this repository). Additionally `mafft` program is used for alignment.
 - The main script, `run_pipeline.py`, outputs substitution counts for the input FASTA file.
 - The final steps of matrix derivation are documented in the notebook:  
   `combine_counters_and_derive_matrix.ipynb`.
@@ -51,7 +51,7 @@ This folder contains Jupyter notebooks used to benchmark AMP similarity metrics 
 ## ⚙️ Setup Notes
 
 - **Paths:**  
-  Data paths in the scripts and notebooks may need adjustment to match your local file system.
+  Data paths in the scripts and notebooks may need adjustment to match your local file system. Data should be placed in the `data` directory in suitable subfolder.
 
 - **Data Availability:**  
   All datasets used in the analysis are available at:  

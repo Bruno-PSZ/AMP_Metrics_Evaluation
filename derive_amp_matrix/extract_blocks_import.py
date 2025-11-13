@@ -13,9 +13,6 @@ def extract_blocks_from_alignment(
 ):
     """
     Extract ungapped alignment blocks from a BioPython MultipleSeqAlignment object.
-
-    Returns:
-        List[MultipleSeqAlignment]: List of block alignments.
     """
     aln_array = pd.DataFrame(
         [list(str(rec.seq)) for rec in alignment],
@@ -63,9 +60,6 @@ def extract_blocks_from_fasta_string(
 ):
     """
     Extract blocks from a FASTA alignment string (in-memory).
-
-    Returns:
-        List[str]: List of FASTA-formatted block strings.
     """
     alignment = AlignIO.read(StringIO(fasta_str), "fasta")
     blocks = extract_blocks_from_alignment(alignment, min_column_completeness, min_block_length)

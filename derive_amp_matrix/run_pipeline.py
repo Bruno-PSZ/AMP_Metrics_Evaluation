@@ -7,10 +7,10 @@ from Bio.SeqIO import FastaIO
 from Bio import SeqIO
 
 from extract_counts import run_blosum_from_seqs
-from extract_cluster_import import extract_cluster_sequences_to_dict  # returns dict of SeqRecord keyed by seq_id
-from run_mafft import run_mafft  # accepts fasta string, returns aligned fasta string
-from extract_blocks_import import extract_blocks_from_fasta_string  # returns dict: {block_name: fasta_string}
-from fasta_to_plain_import import fasta_str_to_plain_str  # fasta string -> plain string
+from extract_cluster_import import extract_cluster_sequences_to_dict
+from run_mafft import run_mafft
+from extract_blocks_import import extract_blocks_from_fasta_string
+from fasta_to_plain_import import fasta_str_to_plain_str 
 
 def parse_clstr(clstr_file):
     clusters = defaultdict(list)
@@ -46,12 +46,8 @@ def load_fasta_to_dict(fasta_file):
 
 def main(fasta_file, clstr_file, output_dir, final_suffix):
     os.makedirs(output_dir, exist_ok=True)
-
-    # Parse clusters from .clstr file
     clusters = parse_clstr(clstr_file)
     final_counts = Counter()
-
-    # Load all sequences once (could optimize further if needed)
     all_seqs = load_fasta_to_dict(fasta_file)
 
     for cluster_num, seq_ids in clusters.items():
@@ -65,33 +61,22 @@ def main(fasta_file, clstr_file, output_dir, final_suffix):
 
         print(f"[INFO] Processing cluster {cluster_num} with {len(seq_ids)} sequences")
 
-        # Extract sequences for cluster from loaded dict
         cluster_seqs = {sid: all_seqs[sid] for sid in seq_ids if sid in all_seqs}
         if not cluster_seqs:
             print(f"[WARNING] No sequences found in FASTA for cluster {cluster_num}")
             continue
 
-        # Convert cluster sequences dict to fasta string
         cluster_fasta_str = dict_to_fasta_string(cluster_seqs)
 
-        # Run MSA (mafft) in-memory
         aligned_fasta_str = run_mafft(cluster_fasta_str)
 
-        # Extract ungapped blocks from MSA string
         blocks = extract_blocks_from_fasta_string(aligned_fasta_str)
 
         cluster_counts = Counter()
 
         for i, block_fasta_str in enumerate(blocks, start=1):
-            block_name = f"block_{i}"
-            # your processing here
-
-            # Convert block fasta string to plain sequence string
             plain_str = fasta_str_to_plain_str(block_fasta_str)
-
-            # Extract counts from plain string
             counts = run_blosum_from_seqs(plain_str, 100)
-
             cluster_counts.update(counts)
 
         final_counts.update(cluster_counts)

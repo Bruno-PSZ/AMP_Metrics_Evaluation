@@ -12,12 +12,6 @@ def fasta_to_plain_file(input_path, output_path):
 def fasta_str_to_plain_str(fasta_str):
     """
     Convert FASTA-formatted string to plain string (one sequence per line, no headers).
-    
-    Args:
-        fasta_str (str): FASTA formatted sequences.
-
-    Returns:
-        str: Plain sequences, one sequence per line.
     """
     records = SeqIO.parse(StringIO(fasta_str), "fasta")
     sequences = [str(rec.seq) for rec in records]

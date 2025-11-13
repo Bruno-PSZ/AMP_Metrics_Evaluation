@@ -70,8 +70,8 @@ results = []
 N_SAMPLES = [1000, 2000, 3000, 5000, 7000, 10000, 14941]
 
 PATHS = {
-    "positives": "/raid/brunopsz/Metrics_Eval/FINAL_MAX_40AA_AMP/amp_positives_MAX40.fasta",
-    "OmegAMP": "/raid/brunopsz/Metrics_Eval/FINAL_MAX_40AA_AMP/omegamp_MAX40.fasta",
+    "positives": "../data/amp_data/amp_positives_MAX40.fasta",
+    "OmegAMP": "../data/amp_data/omegamp_MAX40.fasta",
 }
 
 datasets = {name: read_fasta_file(path) for name, path in PATHS.items()}

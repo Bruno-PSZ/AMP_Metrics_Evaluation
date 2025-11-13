@@ -4,40 +4,40 @@ from mean_mmseqs_score import compute_mean_normalized_bitscore
 
 
 # PATHS_FOR_BENCHMARK = {
-#     "positives": "/raid/brunopsz/Metrics_Eval/FINAL_MAX_40AA_AMP/amp_positives_MAX40.fasta",
-#     "positives_hq": "/raid/brunopsz/Metrics_Eval/FINAL_MAX_40AA_AMP/amp_positives_hq_MAX40.fasta",
-#     "negatives": "/raid/brunopsz/Metrics_Eval/FINAL_MAX_40AA_AMP/amp_negatives_MAX40.fasta",
-#     "negatives_hq": "/raid/brunopsz/Metrics_Eval/FINAL_MAX_40AA_AMP/amp_negatives_hq_MAX40.fasta",
-#     "random_uniform": "/raid/brunopsz/Metrics_Eval/FINAL_MAX_40AA_AMP/random_amp_uniform_distribution_MAX40.fasta",
-#     "random_standard": "/raid/brunopsz/Metrics_Eval/FINAL_MAX_40AA_AMP/random_amp_with_standard_distribution_MAX40.fasta",
-#     "UniProt": "/raid/brunopsz/Metrics_Eval/FINAL_MAX_40AA_AMP/uniprot_8_50_100_50K_MAX40.fasta",
-#     "AMP-Diffusion": "/raid/brunopsz/Metrics_Eval/FINAL_MAX_40AA_AMP/amp-diffusion_MAX40.fasta",
-#     "AMP-GAN": "/raid/brunopsz/Metrics_Eval/FINAL_MAX_40AA_AMP/amp-gan_MAX40_50K.fasta",
-#     "CPL-Diff": "/raid/brunopsz/Metrics_Eval/FINAL_MAX_40AA_AMP/cpl-diff_MAX40.fasta",
-#     "HydrAMP": "/raid/brunopsz/Metrics_Eval/FINAL_MAX_40AA_AMP/hydramp_MAX40.fasta",
-#     "OmegAMP": "/raid/brunopsz/Metrics_Eval/FINAL_MAX_40AA_AMP/omegamp_MAX40_50K.fasta",
-#     "AMP-LM": "/raid/brunopsz/Metrics_Eval/FINAL_MAX_40AA_AMP/amp_lm_MAX40.fasta",
-#     "AMP-Muller": "/raid/brunopsz/Metrics_Eval/FINAL_MAX_40AA_AMP/amp_muller_MAX40.fasta",
+#     "positives": "../data/amp_data/amp_positives_MAX40.fasta",
+#     "positives_hq": "../data/amp_data/amp_positives_hq_MAX40.fasta",
+#     "negatives": "../data/amp_data/amp_negatives_MAX40.fasta",
+#     "negatives_hq": "../data/amp_data/amp_negatives_hq_MAX40.fasta",
+#     "random_uniform": "../data/amp_data/random_amp_uniform_distribution_MAX40.fasta",
+#     "random_standard": "../data/amp_data/random_amp_with_standard_distribution_MAX40.fasta",
+#     "UniProt": "../data/amp_data/uniprot_8_50_100_50K_MAX40.fasta",
+#     "AMP-Diffusion": "../data/amp_data/amp-diffusion_MAX40.fasta",
+#     "AMP-GAN": "../data/amp_data/amp-gan_MAX40_50K.fasta",
+#     "CPL-Diff": "../data/amp_data/cpl-diff_MAX40.fasta",
+#     "HydrAMP": "../data/amp_data/hydramp_MAX40.fasta",
+#     "OmegAMP": "../data/amp_data/omegamp_MAX40_50K.fasta",
+#     "AMP-LM": "../data/amp_data/amp_lm_MAX40.fasta",
+#     "AMP-Muller": "../data/amp_data/amp_muller_MAX40.fasta",
 # }
 
 MAX_LEN = 40  # 25
 MIN_LEN = 10  # 8
 
-database = f"/raid/brunopsz/PLAST_EXPERIMENTS/data_{MAX_LEN}/sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}_vol_1.fasta"
+database = f"../data/similarity_control/sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}_vol_1.fasta"
 
 PATHS_FOR_BENCHMARK = [
-    f"/raid/brunopsz/PLAST_EXPERIMENTS/data_{MAX_LEN}/sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}_vol_1.fasta",
-    f"/raid/brunopsz/PLAST_EXPERIMENTS/data_{MAX_LEN}/sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}_vol_2.fasta",
-    f"/raid/brunopsz/PLAST_EXPERIMENTS/data_{MAX_LEN}/addition_or_deletion_begin_end_sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}.fasta",
-    f"/raid/brunopsz/PLAST_EXPERIMENTS/data_{MAX_LEN}/addition_or_deletion_sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}.fasta",
-    f"/raid/brunopsz/PLAST_EXPERIMENTS/data_{MAX_LEN}/mutated_1_sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}.fasta",
-    f"/raid/brunopsz/PLAST_EXPERIMENTS/data_{MAX_LEN}/mutated_2_sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}.fasta",
-    f"/raid/brunopsz/PLAST_EXPERIMENTS/data_{MAX_LEN}/mutated_3_sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}.fasta",
-    f"/raid/brunopsz/PLAST_EXPERIMENTS/data_{MAX_LEN}/mutated_5_sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}.fasta",
-    f"/raid/brunopsz/PLAST_EXPERIMENTS/data_{MAX_LEN}/mutated_7_sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}.fasta",
-    f"/raid/brunopsz/PLAST_EXPERIMENTS/data_{MAX_LEN}/shuffled_sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}_vol_1.fasta",
-    f"/raid/brunopsz/PLAST_EXPERIMENTS/data_{MAX_LEN}/random_2000_{MIN_LEN}_{MAX_LEN}_positives_hq_len_distrib.fasta",
-    f"/raid/brunopsz/PLAST_EXPERIMENTS/data_{MAX_LEN}/reversed_sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}_vol_1.fasta",
+    f"../data/similarity_control/sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}_vol_1.fasta",
+    f"../data/similarity_control/sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}_vol_2.fasta",
+    f"../data/similarity_control/addition_or_deletion_begin_end_sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}.fasta",
+    f"../data/similarity_control/addition_or_deletion_sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}.fasta",
+    f"../data/similarity_control/mutated_1_sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}.fasta",
+    f"../data/similarity_control/mutated_2_sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}.fasta",
+    f"../data/similarity_control/mutated_3_sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}.fasta",
+    f"../data/similarity_control/mutated_5_sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}.fasta",
+    f"../data/similarity_control/mutated_7_sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}.fasta",
+    f"../data/similarity_control/shuffled_sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}_vol_1.fasta",
+    f"../data/similarity_control/random_2000_{MIN_LEN}_{MAX_LEN}_positives_hq_len_distrib.fasta",
+    f"../data/similarity_control/reversed_sampled_positives_hq_1000_{MIN_LEN}_{MAX_LEN}_vol_1.fasta",
 ]
 
 
